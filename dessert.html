@@ -96,7 +96,7 @@
       height: 96px;
       width: 96px;
       animation: spin infinite linear 1.8s;
-      animation-delay: 0;
+      animation-delay: 0s;
       bottom: -38px;
       right: -112px;
       transition: all 1.2s linear;
@@ -273,7 +273,7 @@
 
     .hidden_text {
       display: none;
-      font-size: 14;
+      font-size: 14px;
       opacity: 0;
       max-height: 0;
       overflow: hidden;
@@ -423,6 +423,90 @@
       fill: #1993e4;
     }
 
+    /* Chat box */
+
+    .chat-container {
+        width: 100%;
+        margin: 0px;
+        background-color: #000000;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+    }
+
+    .chat-header {
+        background-color: #051a27;
+        color: #fff;
+        padding: 5px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .chat-messages {
+        flex: 1;
+        padding: 16px;
+        overflow-y: auto;
+        background-color: #162c3a;
+    }
+
+    .chat-message {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .chat-message.user .message {
+        background-color: #007bff;
+        color: #fff;
+        align-self: flex-end;
+    }
+
+    .chat-message.admin .message {
+        background-color: #eee;
+        color: #333;
+    }
+
+    .message {
+        max-width: 80%;
+        padding: 10px 16px;
+        border-radius: 18px;
+        line-height: 1.4;
+    }
+
+    .chat-form-container {
+        display: flex;
+        border-top: 1px solid #ddd;
+    }
+
+    #chat-input {
+        flex: 1;
+        margin: 0px;
+        padding: 8px 10px;
+        border: none;
+        font-size: 16px;
+        background-color: #000000;
+        color: white;
+        border-radius: 10px ;
+    }
+
+    #send-button {
+        padding: 8px 20px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 0px;
+        font-family: Poppins;
+    }
+
+    #send-button:hover {
+        background-color: #0056b3;
+    }
+
+
     @media (max-width: 768px) {
       body {
         overflow-x: hidden;
@@ -513,8 +597,8 @@
       .section2 {
       overflow: hidden;
       width: 100%;
-      margin-top: 100vh;
-      margin-bottom: -80vh;
+      margin-top: 41vh;
+      margin-bottom: -82.5vh;
       }
 
       .dish {
@@ -550,6 +634,7 @@
                 <select name="option" id="mySelect">
                   <option value="Menu">Menu</option>
                   <option value="info">Contact Info</option>
+                  <option value="chat">Ask Us</option>
                 </select>
                 
                 <!-- <a href="#">Products &amp; Services</a> -->
@@ -569,21 +654,21 @@
     <div class="section2">
         <div class="alldish2">
             <div class="dish">
-            <img src="https://i.pinimg.com/736x/fd/f5/34/fdf534dbcfd593e825b504f0627cfe63.jpg" alt="ramen" width="280px" class="img">
+            <img src="https://i.pinimg.com/736x/fd/f5/34/fdf534dbcfd593e825b504f0627cfe63.jpg" alt="ramen" width="280" class="img">
             <p>Strawberry Noir</p>
             <p class="hidden_text">
                 The Strawberry Noir is a decadent dessert featuring rich chocolate and ripe strawberries, creating a perfect balance of sweetness and indulgence in every bite.</p>
             </div>
 
             <div class="dish">
-            <img src="choc.jpg" alt="beefsteak" width="280px" class="img">
+            <img src="choc.jpg" alt="beefsteak" width="280" class="img">
             <p>Golden Cocoa Orb</p>
             <p class="hidden_text">
                 The Cocoa Orb is a decadent chocolate treat with a smooth, rich flavor that melts in your mouth.</p>
             </div>
 
             <div class="dish">
-                <img src="https://i.pinimg.com/736x/aa/55/34/aa5534861ac12f9c817745a3002cc5da.jpg" alt="gourmet" width="280px" class="img">
+                <img src="https://i.pinimg.com/736x/aa/55/34/aa5534861ac12f9c817745a3002cc5da.jpg" alt="gourmet" width="280" class="img">
                 <p>Gourmet Elegance</p>
                 <p class="hidden_text">
                 The Gourmet Elegance is a high-end, expertly crafted treat with refined flavors and elegant presentation.</p>
@@ -592,21 +677,21 @@
         </div>
         <div class="alldish2">
             <div class="dish">
-                <img src="https://i.pinimg.com/236x/ea/ed/46/eaed461f7abe3a20708ad1d19b227d03.jpg" alt="mousse" width="280px" class="img">
+                <img src="https://i.pinimg.com/236x/ea/ed/46/eaed461f7abe3a20708ad1d19b227d03.jpg" alt="mousse" width="280" class="img">
                 <p>Grand Choco Mousse</p>
                 <p class="hidden_text">
                 A silky, airy chocolate indulgence with a perfect bittersweet touch.</p>
             </div>
 
             <div class="dish">
-                <img src="https://i.pinimg.com/736x/4f/78/6d/4f786d97f30dc0e519aa0d3868164157.jpg" alt="fruit" width="280px" class="img">
+                <img src="https://i.pinimg.com/736x/4f/78/6d/4f786d97f30dc0e519aa0d3868164157.jpg" alt="fruit" width="280" class="img">
                 <p>Fruity Grandoiuse</p>
                 <p class="hidden_text">
                 Lush layers of rich chocolate and vibrant fruit, harmonized in sweet perfection.</p>
             </div>
 
             <div class="dish">
-                <img src="https://i.pinimg.com/236x/98/ec/3a/98ec3ade018e222c92d9afb56568ac05.jpg" alt="raspberry" width="280px" class="img">
+                <img src="https://i.pinimg.com/236x/98/ec/3a/98ec3ade018e222c92d9afb56568ac05.jpg" alt="raspberry" width="280" class="img">
                 <p>Raspmic Dome</p>
                 <p class="hidden_text">
                     A glossy raspberry mousse dome with a hidden chocolate core, resting on a delicate almond base.</p>
@@ -624,7 +709,7 @@
           </div>
 
           <div class="rating-stars-container">
-            <input value="star-5" name="star" id="star-5" type="radio" />
+            <input value="star-5" name="star" id="star-5" type="radio">
             <label for="star-5" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -633,7 +718,7 @@
                 ></path>
               </svg>
             </label>
-            <input value="star-4" name="star" id="star-4" type="radio" />
+            <input value="star-4" name="star" id="star-4" type="radio">
             <label for="star-4" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -642,7 +727,7 @@
                 ></path>
               </svg>
             </label>
-            <input value="star-3" name="star" id="star-3" type="radio" />
+            <input value="star-3" name="star" id="star-3" type="radio">
             <label for="star-3" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -651,7 +736,7 @@
                 ></path>
               </svg>
             </label>
-            <input value="star-2" name="star" id="star-2" type="radio" />
+            <input value="star-2" name="star" id="star-2" type="radio">
             <label for="star-2" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -660,7 +745,7 @@
                 ></path>
               </svg>
             </label>
-            <input value="star-1" name="star" id="star-1" type="radio" />
+            <input value="star-1" name="star" id="star-1" type="radio">
             <label for="star-1" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -698,17 +783,30 @@
       </div>
     </div>
 
-    <section id="info">
+    <div id="info">
       <div class="contacts">
         <p style="font-size: 25px;">Contacts</p>
         <p style="font-size: 10px;">Location: Cebu South Coastal Rd, Antuwanga, Cebu City, 6000 Cebu</p>
         <p style="font-size: 10px;">Contact no. 79429-321-3218</p>
         
       </div>
-    </section>
+
+      <div class="chat-container" id="chat">
+        <header class="chat-header">
+            <h2>Ask Us</h2>
+        </header>
+    
+        <div class="chat-messages" id="chat-messages"></div>
+    
+        <div class="chat-form-container">
+            <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+            <button id="send-button">Send</button>
+        </div>
+      </div>
+    </div>
     
     
-  </div>
+  
 
   <script>
 
@@ -773,6 +871,71 @@
 
         });
     });
+
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+    const sendButton = document.getElementById('send-button');
+
+    // Event listener for Send button
+    sendButton.addEventListener('click', sendMessage);
+
+    // Event listener for pressing "Enter"
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    // Send message from user
+    function sendMessage() {
+        const messageText = chatInput.value.trim();
+        if (messageText === '') return; // Do not send empty messages
+        addMessageToChat('user', messageText);
+        chatInput.value = ''; // Clear the input field
+
+        // Simulate admin reply based on user's message
+        setTimeout(() => {
+            adminReply(messageText);
+        }, 1000);
+    }
+
+    // Add message to the chat (for both user and admin)
+    function addMessageToChat(sender, message) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message', sender);
+        messageElement.innerHTML = `<div class="message">${message}</div>`;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom
+    }
+
+    // Admin logic for responding to user messages
+    function adminReply(userMessage) {
+        let reply;
+
+        // 🛠️ Custom if-else logic for different messages
+        if (userMessage.toLowerCase() === 'hello' || userMessage.toLowerCase() === 'hi' || userMessage.toLowerCase().includes('hello') || userMessage.toLowerCase().includes('hi')) {
+            reply = 'Hi there! How can I assist you today?';
+        } else if (userMessage.toLowerCase() === 'what are your operating hours?') {
+            reply = 'We are open from 8:00 AM to 10:00 PM, Monday to Sunday.';
+        } else if (userMessage.toLowerCase() === 'where are you located?') {
+            reply = 'We are located at Cebu South Coastal Rd, Antuwanga, Cebu City, 6000 Cebu';
+        } else if (userMessage.toLowerCase().includes('telephone') || userMessage.toLowerCase().includes('phone') || userMessage.toLowerCase().includes('contact') ) {
+            reply = 'You can call us directly at (794) 29-321-3218.';
+        } else if (userMessage.toLowerCase().includes('founders')) {
+            reply = 'The great founders for this Company are no other than Nathaniel Ricacho & Eurika Stephanie Oraño.';
+        } else if (userMessage.toLowerCase().includes('cancel')) {
+          reply = 'You can press the cancel button for your reservation or you can call us directly.';
+        } else if (userMessage.toLowerCase().includes('reservation')) {
+            reply = 'You can make a reservation on our website or call us directly at (794) 29-321-3218.';
+        } else if (userMessage.toLowerCase().includes('vegetarian')) {
+            reply = 'Yes, we have several delicious vegetarian options available!';
+        } else {
+            reply = "I'm not sure how to respond to that. Can you please provide more details?";
+        }
+
+        // Add admin message to the chat
+        addMessageToChat('admin', reply);
+    }
 
   
 </script>

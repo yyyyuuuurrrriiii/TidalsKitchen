@@ -68,9 +68,6 @@
         transition: 0.45s;
       }
   
-      a:hover {
-        
-      }
   
       .log-In {
         position: relative;
@@ -98,7 +95,7 @@
         height: 96px;
         width: 96px;
         animation: spin infinite linear 1.8s;
-        animation-delay: 0;
+        animation-delay: 0s;
         bottom: -38px;
         right: -112px;
         transition: all 1.2s linear;
@@ -191,7 +188,7 @@
       background-color: #111a20;
       width: 100%;
       margin-top: 50vh;
-      margin-bottom:-151.5vh;
+      margin-bottom:-182.5vh;
       position: relative;
       z-index: 1;
       padding-top: 20px;
@@ -277,7 +274,7 @@
   
       .hidden_text {
         display: none;
-        font-size: 14;
+        font-size: 14px;
         opacity: 0;
         max-height: 0;
         overflow: hidden;
@@ -427,6 +424,89 @@
         fill: #1993e4;
       }
 
+      /* Chat box */
+
+    .chat-container {
+        width: 100%;
+        margin: 0px;
+        background-color: #000000;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+    }
+
+    .chat-header {
+        background-color: #051a27;
+        color: #fff;
+        padding: 5px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .chat-messages {
+        flex: 1;
+        padding: 16px;
+        overflow-y: auto;
+        background-color: #162c3a;
+    }
+
+    .chat-message {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .chat-message.user .message {
+        background-color: #007bff;
+        color: #fff;
+        align-self: flex-end;
+    }
+
+    .chat-message.admin .message {
+        background-color: #eee;
+        color: #333;
+    }
+
+    .message {
+        max-width: 80%;
+        padding: 10px 16px;
+        border-radius: 18px;
+        line-height: 1.4;
+    }
+
+    .chat-form-container {
+        display: flex;
+        border-top: 1px solid #ddd;
+    }
+
+    #chat-input {
+        flex: 1;
+        margin: 0px;
+        padding: 8px 10px;
+        border: none;
+        font-size: 16px;
+        background-color: #000000;
+        color: white;
+        border-radius: 10px ;
+    }
+
+    #send-button {
+        padding: 8px 20px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 0px;
+        font-family: Poppins;
+    }
+
+    #send-button:hover {
+        background-color: #0056b3;
+    }
+
       @media (max-width: 768px) {
       body {
         overflow-x: hidden;
@@ -549,6 +629,7 @@
                 <select name="option" id="mySelect">
                   <option value="Menu">Menu</option>
                   <option value="info">Contact Info</option>
+                  <option value="chat">Ask Us</option>
                 </select>
                 
                 <!-- <a href="#">Products &amp; Services</a> -->
@@ -568,19 +649,19 @@
     <div class="section2" id="section2">
       <div class="alldish2">
         <div class="dish" id="dish">
-          <img src="https://i.pinimg.com/736x/3c/3e/bc/3c3ebc3d96d76b5df0ebd9425d54ae32.jpg" alt="chillean sea bass" width="280px" class="img">
+          <img src="https://i.pinimg.com/736x/3c/3e/bc/3c3ebc3d96d76b5df0ebd9425d54ae32.jpg" alt="chillean sea bass" width="280" class="img">
           <p>Golden Shores Chilean Sea Bass</p>
           <p class="hidden_text">The Chilean Sea Bass is perfectly seared for a crispy exterior and tender interior, complemented by a citrus beurre blanc sauce. Served with creamy mashed potatoes and seasonal vegetables, it’s a true ocean-inspired delight.</p>
         </div>
 
         <div class="dish">
-          <img src="https://i.pinimg.com/736x/3b/95/3e/3b953e1c9834cdecc8e1fdab64d29e8f.jpg" alt="seafood paella" width="280px" class="img">
+          <img src="https://i.pinimg.com/736x/3b/95/3e/3b953e1c9834cdecc8e1fdab64d29e8f.jpg" alt="seafood paella" width="280" class="img">
           <p>Mariner’s Dream Paella</p>
           <p class="hidden_text">A vibrant seafood paella brimming with fresh shrimp, mussels, and calamari, nestled in saffron-infused rice with rich, savory flavors of the sea.</p>
         </div>
 
         <div class="dish">
-          <img src="lobster.jpg" alt="lobster" width="280px" class="img">
+          <img src="lobster.jpg" alt="lobster" width="280" class="img">
           <p>Lobster Royale</p>
           <p class="hidden_text">Succulent lobster tails, delicately grilled and served with a rich garlic butter sauce, offering a perfect balance of sweet and savory flavors.</p>
         </div>
@@ -588,19 +669,19 @@
 
       <div class="alldish2">
         <div class="dish">
-          <img src="https://i.pinimg.com/736x/00/bf/b5/00bfb507fb37fa175fde42be0c64eb0a.jpg" alt="pasta" width="280px" class="img">
+          <img src="https://i.pinimg.com/736x/00/bf/b5/00bfb507fb37fa175fde42be0c64eb0a.jpg" alt="pasta" width="280" class="img">
           <p>El Pacifica Penne Pasta</p>
           <p class="hidden_text">This Penne Pasta is tossed in a rich, savory sauce with a blend of fresh herbs and spices, offering a deliciously satisfying bite in every forkful. Perfectly cooked and full of flavor, it’s a comforting classic.</p>
         </div> 
 
         <div class="dish">
-          <img src="ramen.jpg" alt="ramen" width="280px" class="img">
+          <img src="ramen.jpg" alt="ramen" width="280" class="img">
           <p>Siamese Silk Ramen</p>
           <p class="hidden_text">A flavorful Thai Ramen with a creamy coconut broth, tender noodles, fresh herbs, and a hint of spice.</p>
         </div>
 
         <div class="dish">
-          <img src="https://i.pinimg.com/736x/f2/19/23/f2192322d65d6da5d5d51aeb03e9d046.jpg" alt="beefsteak" width="280px" class="img">
+          <img src="https://i.pinimg.com/736x/f2/19/23/f2192322d65d6da5d5d51aeb03e9d046.jpg" alt="beefsteak" width="280" class="img">
           <p>Midnight Marbled Steak</p>
           <p class="hidden_text">A juicy, perfectly grilled beef steak with a rich, savory flavor, served with a side of buttery mashed potatoes and fresh vegetables.</p>
         </div>
@@ -608,19 +689,19 @@
 
       <div class="alldish2">
         <div class="dish">
-          <img src="octopus.jpg" alt="octopus" width="280px" class="img">
+          <img src="octopus.jpg" alt="octopus" width="280" class="img">
           <p>The Kraken’s Delight</p>
           <p class="hidden_text">Grilled octopus with a smoky flavor, served with a zesty lemon herb sauce and roasted vegetables.</p>
         </div> 
 
         <div class="dish">
-          <img src="chicken.jpg" alt="chicken" width="280px" class="img">
+          <img src="chicken.jpg" alt="chicken" width="280" class="img">
           <p>Chicken Estofado</p>
           <p class="hidden_text">Grilled chicken paired with a medley of fresh greens, walnuts, and a creamy blue cheese dressing.</p>
         </div>
 
         <div class="dish">
-          <img src="salad.jpg" alt="salad" width="280px" class="img">
+          <img src="salad.jpg" alt="salad" width="280" class="img">
           <p>Garden Bliss Salad</p>
           <p class="hidden_text">A celebration of botanicals with mixed greens, edible flowers, roasted chicken, and a delicate lavender-infused dressing.</p>
         </div>
@@ -636,7 +717,7 @@
           </div>
 
           <div class="rating-stars-container">
-            <input value="star-5" name="star" id="star-5" type="radio" />
+            <input value="star-5" name="star" id="star-5" type="radio">
             <label for="star-5" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -645,7 +726,7 @@
                 ></path>
               </svg>
             </label>
-            <input value="star-4" name="star" id="star-4" type="radio" />
+            <input value="star-4" name="star" id="star-4" type="radio">
             <label for="star-4" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -654,7 +735,7 @@
                 ></path>
               </svg>
             </label>
-            <input value="star-3" name="star" id="star-3" type="radio" />
+            <input value="star-3" name="star" id="star-3" type="radio">
             <label for="star-3" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -663,7 +744,7 @@
                 ></path>
               </svg>
             </label>
-            <input value="star-2" name="star" id="star-2" type="radio" />
+            <input value="star-2" name="star" id="star-2" type="radio" >
             <label for="star-2" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -672,7 +753,7 @@
                 ></path>
               </svg>
             </label>
-            <input value="star-1" name="star" id="star-1" type="radio" />
+            <input value="star-1" name="star" id="star-1" type="radio" >
             <label for="star-1" class="star-label">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -710,17 +791,32 @@
       </div>
     </div>
 
-    <section id="info">
+    <div id="info">
       <div class="contacts">
         <p style="font-size: 25px;">Contacts</p>
         <p style="font-size: 10px;">Location: Cebu South Coastal Rd, Antuwanga, Cebu City, 6000 Cebu</p>
         <p style="font-size: 10px;">Contact no. 79429-321-3218</p>
         
       </div>
-    </section>
+      
+        <div class="chat-container" id="chat">
+        <header class="chat-header">
+            <h2>Ask Us</h2>
+        </header>
+    
+        <div class="chat-messages" id="chat-messages"></div>
+    
+        <div class="chat-form-container">
+            <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+            <button id="send-button">Send</button>
+        </div>
+      </div>
+    </div>
+
     
     
-  </div>
+    
+  
 
   <script>
 
@@ -786,7 +882,70 @@
         });
     });
 
-  
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+    const sendButton = document.getElementById('send-button');
+
+    // Event listener for Send button
+    sendButton.addEventListener('click', sendMessage);
+
+    // Event listener for pressing "Enter"
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    // Send message from user
+    function sendMessage() {
+        const messageText = chatInput.value.trim();
+        if (messageText === '') return; // Do not send empty messages
+        addMessageToChat('user', messageText);
+        chatInput.value = ''; // Clear the input field
+
+        // Simulate admin reply based on user's message
+        setTimeout(() => {
+            adminReply(messageText);
+        }, 1000);
+    }
+
+    // Add message to the chat (for both user and admin)
+    function addMessageToChat(sender, message) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message', sender);
+        messageElement.innerHTML = `<div class="message">${message}</div>`;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom
+    }
+
+    // Admin logic for responding to user messages
+    function adminReply(userMessage) {
+        let reply;
+
+        // 🛠️ Custom if-else logic for different messages
+        if (userMessage.toLowerCase() === 'hello' || userMessage.toLowerCase() === 'hi' || userMessage.toLowerCase().includes('hello') || userMessage.toLowerCase().includes('hi')) {
+            reply = 'Hi there! How can I assist you today?';
+        } else if (userMessage.toLowerCase() === 'what are your operating hours?') {
+            reply = 'We are open from 8:00 AM to 10:00 PM, Monday to Sunday.';
+        } else if (userMessage.toLowerCase() === 'where are you located?') {
+            reply = 'We are located at Cebu South Coastal Rd, Antuwanga, Cebu City, 6000 Cebu';
+        } else if (userMessage.toLowerCase().includes('telephone') || userMessage.toLowerCase().includes('phone') || userMessage.toLowerCase().includes('contact') ) {
+            reply = 'You can call us directly at (794) 29-321-3218.';
+        } else if (userMessage.toLowerCase().includes('founders')) {
+            reply = 'The great founders for this Company are no other than Nathaniel Ricacho & Eurika Stephanie Oraño.';
+        } else if (userMessage.toLowerCase().includes('cancel')) {
+          reply = 'You can press the cancel button for your reservation or you can call us directly.';
+        } else if (userMessage.toLowerCase().includes('reservation')) {
+            reply = 'You can make a reservation on our website or call us directly at (794) 29-321-3218.';
+        } else if (userMessage.toLowerCase().includes('vegetarian')) {
+            reply = 'Yes, we have several delicious vegetarian options available!';
+        } else {
+            reply = "I'm not sure how to respond to that. Can you please provide more details?";
+        }
+
+        // Add admin message to the chat
+        addMessageToChat('admin', reply);
+    }
 </script>
 </body>
 
