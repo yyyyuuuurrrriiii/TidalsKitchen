@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0px;
+            font-family: Poppins;
+            background: url(bgReserve.jpg);
+            background-size: 1600px;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+    
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            opacity: 80%;
+            transition: 0.35s;
+            
+            
+        }
+    
+        nav:hover {
+        opacity: 1;
+        background-color: #47555E;
+        }
+    
+        .nav2 {
+            margin: 0px 12px;
+        }
+    
+        .options {
+            text-decoration: none;
+            padding: 0 15px;
+            color: white;
+            transition: 0.45s;
+            font-size: 17px;
+        }
+    
+        .options:hover {
+        animation: scaling 1s infinite alternate-reverse ease-in-out;
+        color: #75bdee;
+        transition: 0.45s;
+        }
+    
+        @keyframes scaling {
+        0% {
+            font-size: 17px;
+            }
+            100% {
+            font-size: 18px; /* Scale back to original size */
+            }
+        }
+    
+        select {
+      background-color: transparent;
+      color: white;
+      /*border-style: solid;
+      border-width: 1.5px;
+      border-color: white;*/
+      outline-style: solid;
+      outline-width: 1.5px;
+      outline-offset: -2px;
+      outline-color: white;
+      padding: 7px 10px;
+      font-size: 16px;
+      margin: 0px 8px;
+      border-radius: 10px;
+      transition: 0.35s;
+    }
+    
+    select:hover {
+      outline-offset: 3px;
+      background-color: #3383b8;
+      outline-color: #3383b8;
+      letter-spacing: 1px;
+    }
+    
+    option {
+      background-color: #47555E;
+    }
+    
+    /*-----------------Title part------*/
+    
+    .section1 {
+        margin-top: 15em;
+        color: white;
+        text-align: center;
+    }
+    
+    .reserve {
+        font-size: 90px;
+        margin: 0px;
+    }
+    
+    .make {
+        margin-top: -2em;
+    }
+    
+    /*---------section2------*/
+    .section2 {
+        color: white;
+        background-color: #111a20;
+        padding-top: 20px;
+        margin-top: 50vh;
+        padding-bottom: 5em;
+    }
+    
+    .holders {
+        display: flex;
+        justify-content: Center;
+        margin: 0;
+        padding-top: 5em;
+    }
+    
+    .opening {
+        line-height: 15px;
+        font-size: 18px;
+        margin-left: 4.5em;
+    }
+    
+    /*-------------holder1---------*/
+    
+    .holder2 {
+        border-style: solid;
+        width: 35%;
+        border-width: 1px;
+        padding: 20px 0 30px 0 ;
+    }
+    .openingHours{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    
+    /*--------------schedules---------*/
+    .weekday {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3.5em;
+        transition: 0.45s;
+        border-bottom: solid white 1px;
+        margin: 0px 2em;
+    }
+    
+    .weekday:hover {
+        background-color: #47555E;
+    }
+    
+    /*--------holder1----------*/
+    
+    .holder1 {
+        border-style: solid;
+        border-width: 1px;
+        padding: 20px 50px 20px 0;
+        width: 30%;
+    }
+    
+    .description {
+        width: 90%;
+        text-indent: 50px;
+        margin-left: 3em;
+        padding-top: 20px;
+        font-size: 15px;
+        text-align: justify;
+        line-height: 2.5em;
+    }
+    
+    /*------------input holders---------*/
+    
+    .holder3 {
+        display: flex;
+        justify-content: center;
+        margin-top: 10em;
+    }
+    
+    
+    
+    .inputholders {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    table {
+        margin: 0 auto;
+    }
+    
+    td {
+        padding: 10px 0;
+    }
+    
+    .inputs {
+        background-color: transparent;
+        border-style: solid;
+        border-width: 1.5px;
+        border-color: white;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        transition: 0.45s;
+    }
+    
+    .check {
+        text-align: center;
+    }
+    
+    textarea {
+        height: 100px;
+        width: 400px;
+    }
+    
+    ::placeholder {
+        color: white;
+        opacity: 50%;
+    }
+    
+    input[type="date"]::-webkit-calendar-picker-indicator {
+                background-color: white; 
+                border-radius: 5px; 
+                padding: 5px; /
+            }
+            
+    input[type="time"]::-webkit-calendar-picker-indicator {
+                background-color: white; 
+                border-radius: 5px; 
+                padding: 5px; 
+    }
+    
+    .inputs:hover {
+        background-color: #205274;
+    }
+    
+     .lobster {
+        margin-right: 5em;
+    
+    }
+    
+    .octopus {
+        margin-left: 5em;
+    
+    } 
+    
+    .submit1 {
+        position: relative;
+          display: inline-block;
+          margin: 0 auto;
+          padding: 8px 21px;
+          text-align: center;
+          font-size: 17px;
+          letter-spacing: 1px;
+          text-decoration: none;
+          color: white;
+          background: transparent;
+          cursor: pointer;
+          transition: ease-out 0.5s;
+          border: 2px solid #93DEFF;
+          border-radius: 10px;
+          box-shadow: inset 0 0 0 0 #93DEFF;
+    }
+    
+    .submit1:hover {
+        color: rgb(44, 98, 109);
+        box-shadow: inset 0 -100px 0 0 #93DEFF;
+        transform: scale(1.05);
+    }
+    
+    .submit1:active {
+        transform: scale(0.9);
+    }
+    
+    
+    .reservation { 
+        border: 1px solid #ccc; 
+        padding: 30px; 
+        margin-bottom: 10px; 
+        margin: 2em auto 3em auto;
+        width: 50%;
+        border-radius: 12px;
+    }
+    
+    .remove-btn {
+        background-color: rgb(109, 0, 0);
+        border-style: solid;
+        border-width: 1.5px;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        transition: 0.45s;
+    }
+
+    .remove-btn:hover {
+        background-color: rgb(181, 0, 0);
+    }
+
+    #history h2 {
+        text-align: center;
+        margin-top: 3em;
+    }
+    
+    
+    </style>
+
+</head>
+
+
+
+<body>
+    
+    <nav>
+        <img src="tk_-removebg-preview.png" alt="Td" height="40" style="padding: 10px 13px;">
+
+        <div class="nav2">
+            
+                <a href="Home.html" class="options">Home</a>
+                <a href="#" class="options">About</a>
+                <select name="option" id="mySelect">
+                  <option value="products">Products & Services</option>
+                  <option value="menu">Menu</option>
+                  <option value="info">Contact Info</option>
+                </select>
+                
+                <!-- <a href="#">Products &amp; Services</a> -->
+        </div>
+        
+    </nav>
+
+    <div class="section1">
+        <h1 class="reserve">Reservation</h1>
+        <p class="make">Make a reservation now!</p>
+    </div>
+
+    <section class="section2">
+        <div class="holders">
+
+            <div class="holder1">
+
+                <div class="opening">
+                    <p style="font-size: 15px;">Reservation</p>
+                    <h1>Reservation</h1>
+                </div>
+
+                <div class="description">
+                    <p>
+                        Welcome to Tidal’s Kitchen Diner! We’re thrilled to have you here. 
+                        Whether you’re planning a cozy dinner for two, a family gathering, 
+                        or a special celebration, we’ve got you covered. Reserve your table 
+                        today to secure your spot and indulge in our carefully crafted dishes 
+                        made with the freshest ingredients.
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        Our warm and inviting atmosphere is 
+                        the perfect backdrop for any occasion. Let us take care of the details while 
+                        you savor every moment. Your unforgettable dining experience starts here!
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="holder2">
+
+                <div class="opening">
+                <p style="font-size: 15px;">Opening hours</p>
+                <h1>Opening Hours</h1>
+                </div>
+
+                <div class="openingHours">
+
+                    <div class="weekday sunday">
+                        <p>Sunday</p>
+                        <p>9:00am - 10:00pm</p>
+                    </div>
+
+                    <div class="weekday monday">
+                        <p>Monday</p>
+                        <p>10:00am - 9:00pm</p>
+                    </div>
+
+                    <div class="weekday tuesday">
+                        <p>Tuesday</p>
+                        <p>10:00am - 9:00pm</p>
+                    </div>
+
+                    <div class="weekday wednesday">
+                        <p>Wednesday</p>
+                        <p>10:00am - 9:00pm</p>
+                    </div>
+
+                    <div class="weekday thursday">
+                        <p>Thursday</p>
+                        <p>10:00am - 9:00pm</p>
+                    </div>
+
+                    <div class="weekday friday">
+                        <p>Friday</p>
+                        <p>10:00am - 9:00pm</p>
+                    </div>
+
+                    <div class="weekday saturday">
+                        <p>Saturday</p>
+                        <p>9:00am - 10:00pm</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        
+        <div class="holder3">   
+
+                <img src="height1.jpg" alt="lobster" class="lobster">
+
+                    <div class="inputholders">
+
+                        <div class="check">
+                            <h1>Reserve Now!</h1>
+                            <p>Check before you submit!</p>
+                        </div>
+                            
+                        <form id="reservationForm">
+                            <table>
+
+                                <tr>
+                                <td><label>Name:</label><br>
+                                <input type="text" id="info1" placeholder="Input here" class="inputs"> 
+                                <p class="error1" style="color: red; font-size: 12px;"></p></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><label>Number of Guests:</label><br>
+                                    <input type="number" id="numbers" placeholder="Input here" class="inputs"> 
+                                    <p class="error2" style="color: red; font-size: 12px;"></p></td>
+                                    </tr>
+
+                                <tr>
+                                <td><label>Date:</label><br>
+                                <input type="date" id="dates" class="inputs">
+                                <p class="error3" style="color: red; font-size: 12px;;"></p></td>
+                                </tr>
+
+                                <tr>
+                                <td><label>Time:</label><br>
+                                <input type="time" id="times" class="inputs">
+                                <p class="error4" style="color: red; font-size: 12px;"></p></td>
+                                </tr>
+
+                                <tr>
+                                <td><label>Extra Info's (optional):</label><br>
+                                <textarea id="extra" placeholder="extra Info's" class="inputs"></textarea>
+                                </tr>
+                            </table>
+                            <button type="submit" class="submit1">Submit</button> 
+                        </form>
+                    </div>
+                
+                <img src="height2.jpg" alt="octopus" class="octopus">
+                
+
+            </div>
+
+        </div>
+
+
+        <div id="history">
+            <h2>Reservation History</h2>
+            
+        </div>
+
+
+    </section>
+
+    <script>
+
+        // Add the validation logic for form submission
+const form = document.getElementById('reservationForm');
+const historyDiv = document.getElementById('history');
+
+let reservations = JSON.parse(localStorage.getItem('reservations')) || [];
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    let isValid = true; 
+
+    
+    document.querySelectorAll('.error1, .error2, .error3, .error4').forEach(error => {
+        error.textContent = '';
+    });
+
+    
+    const name = document.getElementById('info1').value;
+    if (name.trim() === '') {
+        document.querySelector('.error1').textContent = 'Name is required.';
+        isValid = false;
+    }
+
+    
+    const guests = document.getElementById('numbers').value;
+    if (guests.trim() === '') {
+        document.querySelector('.error2').textContent = 'Number of guests is required.';
+        isValid = false;
+    }
+
+   
+    const date = document.getElementById('dates').value;
+    if (date.trim() === '') {
+        document.querySelector('.error3').textContent = 'Date is required.';
+        isValid = false;
+    }
+
+   
+    const time = document.getElementById('times').value;
+    if (time.trim() === '') {
+        document.querySelector('.error4').textContent = 'Time is required.';
+        isValid = false;
+    }
+
+   
+    if (isValid) {
+        const reservation = {
+            name: name,
+            numbers: guests,
+            date: date,
+            time: time,
+            extra: document.getElementById('extra').value,
+        };
+        reservations.push(reservation);
+        localStorage.setItem('reservations', JSON.stringify(reservations));
+
+        displayReservations();
+    }
+});
+
+function removeReservation(index) {
+    reservations.splice(index, 1); 
+    localStorage.setItem('reservations', JSON.stringify(reservations)); 
+    displayReservations();
+}
+
+// Function to display reservations
+function displayReservations() {
+    historyDiv.innerHTML = '<h2>Reservation History</h2>';
+    reservations.forEach((reservation, index) => {
+        const div = document.createElement('div');
+        div.classList.add('reservation');
+        div.innerHTML = `
+            <p><strong>Name:</strong> ${reservation.name}</p>
+            <p><strong>Guests:</strong> ${reservation.numbers}</p>
+            <p><strong>Date:</strong> ${reservation.date}</p>
+            <p><strong>Time:</strong> ${reservation.time}</p>
+            <p><strong>Extra Info:</strong> ${reservation.extra}</p>
+            <button class="remove-btn" onclick="removeReservation(${index})">Remove</button>
+        `;
+        historyDiv.appendChild(div);
+    });
+}
+
+
+
+
+displayReservations();
+
+        
+    </script>
+
+</body>
+</html>
