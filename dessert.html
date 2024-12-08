@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Our Menus</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-tidal-wave-clipart-vector-png-image_6865053.png">
+
+    <style>
+    body {
+      margin: 0px;
+      font-family: Poppins;
+      background: url(bg3.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 0px;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+  
+    }
+
+    html {
+      height: 100%;
+      width: 100%;
+      scroll-behavior: smooth;
+      margin: 0px;
+      padding: 0px;
+
+    }
+
+    /*-----------Nav part--------*/
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      opacity: 80%;
+      transition: 0.35s;
+      
+      
+    }
+
+    nav:hover {
+    opacity: 1;
+    background-color: #47555E;
+    }
+
+    .nav2 {
+      margin: 0px 12px;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 0 15px;
+      color: white;
+      transition: 0.45s;
+    }
+
+    a:hover {
+      
+    }
+
+    .log-In {
+      position: relative;
+    display: inline-block;
+    padding: 5px 16px;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgb(221, 218, 218);
+    background: white;
+    font-weight: bold;
+    font-size: 16px;
+    color: #1993e4;
+    transition: all 1.2s linear;
+    cursor: pointer;
+    margin-right: 10px;
+    }
+
+    .log-In::after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(to right, #7e1d1d, #e6292956);
+      border-radius: 30%;
+      height: 96px;
+      width: 96px;
+      animation: spin infinite linear 1.8s;
+      animation-delay: 0;
+      bottom: -38px;
+      right: -112px;
+      transition: all 1.2s linear;
+      z-index: -1;
+    }
+
+    .log-In:hover {
+      color: white;
+      transition-duration: 0.45s;
+      
+    }
+
+    .log-In:hover::after {
+      right: -60px;
+      bottom: -92px;
+      width: 256px;
+      height: 256px;
+    }
+
+    .log-In > .log-In-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+
+      /*----------------------------------------*/
+    select {
+      background-color: transparent;
+      color: white;
+      /*border-style: solid;
+      border-width: 1.5px;
+      border-color: white;*/
+      outline-style: solid;
+      outline-width: 1.5px;
+      outline-offset: -2px;
+      outline-color: white;
+      padding: 7px 10px;
+      font-size: 16px;
+      margin: 0px 8px;
+      border-radius: 10px;
+      transition: 0.35s;
+    }
+
+    select:hover {
+      outline-offset: 3px;
+      background-color: #3383b8;
+      outline-color: #3383b8;
+      letter-spacing: 1px;
+    }
+
+    option {
+      background-color: #47555E;
+    }
+
+      /* Menu */
+    .Menu {
+        font-size: 100px;
+        color: white;
+        border:  solid transparent;
+        background-color: rgba(0, 0, 0, 0.6);
+        margin-top: 9rem;
+        margin-bottom: 10px;
+        margin-right: 15rem;
+        margin-left: 15rem;
+        text-align: center;
+        font-weight: bolder;
+        border-radius: 15px;
+        position: relative;
+
+    }
+
+    .img {
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    /*-------------------section 2--------------------*/
+
+    .section2 {
+      background-color: #111a20;
+      width: 100%;
+      margin-top: 43vh;
+      margin-bottom:-112.5vh;
+      position: relative;
+      z-index: 1;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      overflow: hidden;
+    
+      
+
+      /*box-shadow: 0 0 100px 120px #577e97;*/
+    }
+
+    /* P */
+
+    p {
+      font-family: Poppins;
+    }
+
+    /* Category */
+    .category {
+        text-align: center;
+        display: flex;
+        color: white;
+        justify-content: center;
+        position: absolute;
+        top: 70%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+    }
+
+    .option {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 30px;
+        margin-left: 8px;
+        border: solid;
+        border-radius: 10px;
+        border-color: transparent ;
+        background-color: rgba(0, 0, 0, 0.7);
+  }
+
+    .main {
+        background-color: rgba(0, 0, 0, 0.6);
+        border: solid black;
+    }
+
+    .dessert {
+        background-color: #47555E;
+        border: solid gray;
+    }
+
+    /* Greeting for Menu Page */
+    .greeting {
+      margin-top: 2px;
+      margin-bottom: 0px;
+      margin-right: 300px;
+      margin-left: 300px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px 30px;
+      border-radius: 10px;
+      color: white;
+
+    }
+
+    /* dishes */
+    .dish {
+        border: solid black;
+        border-radius: 15px;
+        padding: 20px 20px;
+        margin-left: 30px;
+        color: white;
+        font-size: 17px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(3px);
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(73, 67, 107, 0.3)    }
+
+    .alldish1 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 35px;
+        margin-top: 20px;
+    }
+
+    .alldish2 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 35px;
+    } 
+
+    /* hidden texts */
+
+    .hidden_text {
+      display: none;
+      font-size: 14;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.35s, max-height 0.35s;
+      font-size: 14px;
+    }
+
+    .hidden_text.visible {
+      opacity: 1;
+      max-height: 200px; /* Adjust as needed based on content height */
+    }
+
+    .dish.active {
+      background-color: rgba(0, 0, 0, 0.6); /* Slightly darker for active state */
+      transition: background-color 0.35s;
+    }
+
+      /*--------------section 3---------------*/
+
+    .section3 {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .contacts {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      
+    }
+
+    /*--------scroll bar------------*/
+    ::-webkit-scrollbar {
+      width: 12px;
+      background-color: #2d424f;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #47555E;
+      border-radius: 20px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #4a7794;
+    }
+
+    /*-------------rating---------*/
+    /* From Uiverse.io by vinodjangid07 */ 
+    .rating-card {
+      width: 280px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 20px;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: white;
+      border-width: 1.5px;
+      gap: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.058);
+      transition: 0.45s;
+      background-color: rgba(0, 0, 0, 0.5)
+    }
+
+    .rating-card:hover {
+      padding: 25px;
+      background-color: #0a202e;
+    }
+
+    .text-wrapper {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    .text-primary {
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .text-secondary {
+      color: #cccccc;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    .rating-stars-container {
+      width: 100%;
+      height: 30px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+    }
+    .star-label svg {
+      fill: rgb(210, 210, 210);
+      width: 20px;
+      height: auto;
+    }
+    .rating-stars-container input {
+      appearance: unset;
+    }
+    .rating-stars-container input:hover ~ .star-label svg {
+      fill: #1993e4;
+    }
+    .rating-stars-container input:checked ~ .star-label svg {
+      fill: #1993e4;
+      animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+    @keyframes slide-in-fwd-center {
+      0% {
+        transform: scale(1.6);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .socials-container {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding-top: 20px;
+      border-top: 1px solid rgb(150, 150, 150);
+    }
+    .social-button {
+      text-decoration: none;
+    }
+    .social-button svg {
+      width: 15px;
+      fill: rgb(228, 228, 228);
+    }
+    .social-button:hover svg {
+      fill: #1993e4;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .logo {
+        height: 25px;
+      }
+
+      .home {
+        font-size: 12px;
+      }
+      
+      .log-In {
+        font-size: 12px;
+      }
+
+      select {
+        font-size: 12px;
+      }
+      .Menu {
+        font-size: 40px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 8rem;
+      }
+      .greeting {
+        margin-top: 1rem;
+        margin-right:1rem;
+        margin-left: 1rem;
+        padding: 1rem;
+        font-size: 10px;
+      }
+
+      .category {
+        top: 63%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+      }
+      .main {
+        font-size: 10px;
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+        align-items: center;
+        padding-left: 0px;
+        padding-right: 0px;
+        
+
+      }
+
+      .img {
+        width: 80px;
+      }
+
+      .dessert {
+        font-size: 10px;
+        margin-top: 10px;
+      }
+
+      .section2 {
+      overflow: hidden;
+      width: 100%;
+      margin-bottom: -85vh;
+      }
+      .dish {
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 10px;
+        margin-left: 2px;
+        margin-right: 2px;
+        
+      } 
+
+      .alldish2 {
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 10px
+      }
+
+      .hidden_text {
+        font-size: 5px;
+      }
+    }
+    </style>
+  </head>
+<body>
+    <nav>
+        <img src="tk_-removebg-preview.png" alt="Td" onclick="window.location.href='Home.html'" height="40" style="padding: 10px 13px;" class="logo">
+
+        <div class="nav2">
+            
+                <a href="Home.html" class="home">Home</a>
+                <select name="option" id="mySelect">
+                  <option value="Menu">Menu</option>
+                  <option value="info">Contact Info</option>
+                </select>
+                
+                <!-- <a href="#">Products &amp; Services</a> -->
+           
+            <button class="log-In" onclick="window.location.href='final-proj2.html'">Log out</button>
+        </div>
+        
+    </nav>
+    <p class="Menu">OUR MENU</p>
+    <p class="greeting">At Tidal's Kitchen, we take pride in curating an unforgettable culinary experience. Dive into our thoughtfully crafted menus, where every dish is a testament to our passion for fine dining and exceptional flavors.</p>
+    
+    <div class="category">
+        <p class="option main"><a href="menu.html">Main Dish</a></p>
+        <p class="option dessert">Desserts</p>
+    </div>
+
+    <div class="section2">
+        <div class="alldish2">
+            <div class="dish">
+            <img src="https://i.pinimg.com/736x/fd/f5/34/fdf534dbcfd593e825b504f0627cfe63.jpg" alt="ramen" width="280px" class="img">
+            <p>Strawberry Noir</p>
+            <p class="hidden_text">
+                The Strawberry Noir is a decadent dessert featuring rich chocolate and ripe strawberries, creating a perfect balance of sweetness and indulgence in every bite.</p>
+            </div>
+
+            <div class="dish">
+            <img src="choc.jpg" alt="beefsteak" width="280px" class="img">
+            <p>Golden Cocoa Orb</p>
+            <p class="hidden_text">
+                The Cocoa Orb is a decadent chocolate treat with a smooth, rich flavor that melts in your mouth.</p>
+            </div>
+
+            <div class="dish">
+                <img src="https://i.pinimg.com/736x/aa/55/34/aa5534861ac12f9c817745a3002cc5da.jpg" alt="gourmet" width="280px" class="img">
+                <p>Gourmet Elegance</p>
+                <p class="hidden_text">
+                The Gourmet Elegance is a high-end, expertly crafted treat with refined flavors and elegant presentation.</p>
+            </div>
+
+        </div>
+        <div class="alldish2">
+            <div class="dish">
+                <img src="https://i.pinimg.com/236x/ea/ed/46/eaed461f7abe3a20708ad1d19b227d03.jpg" alt="mousse" width="280px" class="img">
+                <p>Grand Choco Mousse</p>
+                <p class="hidden_text">
+                A silky, airy chocolate indulgence with a perfect bittersweet touch.</p>
+            </div>
+
+            <div class="dish">
+                <img src="https://i.pinimg.com/736x/4f/78/6d/4f786d97f30dc0e519aa0d3868164157.jpg" alt="fruit" width="280px" class="img">
+                <p>Fruity Grandoiuse</p>
+                <p class="hidden_text">
+                Lush layers of rich chocolate and vibrant fruit, harmonized in sweet perfection.</p>
+            </div>
+
+            <div class="dish">
+                <img src="https://i.pinimg.com/236x/98/ec/3a/98ec3ade018e222c92d9afb56568ac05.jpg" alt="raspberry" width="280px" class="img">
+                <p>Raspmic Dome</p>
+                <p class="hidden_text">
+                    A glossy raspberry mousse dome with a hidden chocolate core, resting on a delicate almond base.</p>
+            </div>
+        </div>
+      
+    
+
+      <div class="section3">
+          
+        <div class="rating-card">
+          <div class="text-wrapper">
+            <p class="text-primary">Please Rate Your Experience</p>
+            <p class="text-secondary">to help us serve you better</p>
+          </div>
+
+          <div class="rating-stars-container">
+            <input value="star-5" name="star" id="star-5" type="radio" />
+            <label for="star-5" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+            <input value="star-4" name="star" id="star-4" type="radio" />
+            <label for="star-4" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+            <input value="star-3" name="star" id="star-3" type="radio" />
+            <label for="star-3" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+            <input value="star-2" name="star" id="star-2" type="radio" />
+            <label for="star-2" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+            <input value="star-1" name="star" id="star-1" type="radio" />
+            <label for="star-1" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+          </div>
+          <div class="socials-container">
+            <a class="social-button" href="#">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
+                ></path>
+              </svg>
+            </a>
+            <a class="social-button" href="#">
+              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                ></path>
+              </svg>
+            </a>
+            <a class="social-button" href="#">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <section id="info">
+      <div class="contacts">
+        <p style="font-size: 25px;">Contacts</p>
+        <p style="font-size: 10px;">Location: Cebu South Coastal Rd, Antuwanga, Cebu City, 6000 Cebu</p>
+        <p style="font-size: 10px;">Contact no. 79429-321-3218</p>
+        
+      </div>
+    </section>
+    
+    
+  </div>
+
+  <script>
+
+  const tidal = document.querySelector('.Menu');
+  const tidal2 = document.querySelector('.greeting');
+  const main = document.querySelector('.main');
+  const dessert = document.querySelector('.dessert');
+  const section2 = document.querySelector('.section2');
+
+
+//-----scroll animation
+  window.addEventListener('scroll', () => {
+    
+    const scrollPosition = window.scrollY;
+
+
+    main.style.transform = `translateX(${scrollPosition * 1}px)`; 
+    dessert.style.transform = `translateX(${scrollPosition * 1}px)`;
+
+    tidal.style.transform = `translateX(${scrollPosition * 1}px)`; 
+    tidal2.style.transform = `translateX(-${scrollPosition * 1}px)`; 
+    section2.style.transform = `translateY(-${scrollPosition * 1}px)`;
+});
+
+    //-------------Soft navigation
+
+    document.getElementById('mySelect').addEventListener('change', function() {
+                const selectedValue = this.value; // Get the selected value
+                if (selectedValue) {
+                    const targetSection = document.getElementById(selectedValue); // Get the target section
+                    targetSection.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section smoothly
+                }
+            });
+
+    // Get all dishes
+    const dishes = document.querySelectorAll('.dish');
+
+    // Add click event listener to each dish
+    dishes.forEach(dish => {
+        dish.addEventListener('click', function () {
+            // Find the hidden text inside the clicked dish
+            const hiddenText = dish.querySelector('.hidden_text');
+
+            // Toggle visibility
+            if (hiddenText.style.display === 'none' || hiddenText.style.display === '') {
+                hiddenText.style.display = 'block';
+            } else {
+                hiddenText.style.display = 'none';
+            }
+            document.querySelectorAll('.hidden_text.visible').forEach(text => {
+            if (text !== hiddenText) {
+                text.classList.remove('visible');
+                text.closest('.dish').classList.remove('active'); // Reset other dishes
+            }
+        });
+
+        // Toggle the 'visible' class for the clicked dish's hidden text
+        hiddenText.classList.toggle('visible');
+        
+        // Toggle the 'active' class for the clicked dish
+        dish.classList.toggle('active');
+
+        });
+    });
+
+  
+</script>
+</body>
+
+</html>
