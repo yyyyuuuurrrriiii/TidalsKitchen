@@ -87,6 +87,7 @@
       transition: all 1.2s linear;
       cursor: pointer;
       margin-right: 10px;
+      font-family: Poppins;
       }
   
       .log-In::after {
@@ -148,6 +149,7 @@
         margin: 0px 8px;
         border-radius: 10px;
         transition: 0.35s;
+        font-family: Poppins;
       }
   
       select:hover {
@@ -261,13 +263,8 @@
           background-color: rgba(0, 0, 0, 0.3);
           backdrop-filter: blur(3px);
           cursor: pointer;
-      }
-  
-      .alldish1 {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 35px;
-          margin-top: 20px;
+          box-shadow: 0 4px 15px rgba(73, 67, 107, 0.3)    
+
       }
   
       .alldish2 {
@@ -435,27 +432,43 @@
         overflow-x: hidden;
       }
 
+      .nav2 {
+        padding: 0px 0px;
+        margin: 0px 0px;
+      }
+
       .logo {
         height: 25px;
+        margin: 0px 0px;
+        padding: 0px 0px;
       }
 
       .home {
-        font-size: 15px;
+        font-size: 10px;
+        margin: 0px;
+        padding: 0px 0px;
       }
       
       .log-In {
-        font-size: 15px;
+        font-size: 10px;
+        margin: 0px;
+        font-family: Poppins;
       }
 
       select {
-        font-size: 15px;
+        font-size: 10px;
+        margin: 0px 0px;
+        padding: 7px 5px;
+        font-family: Poppins;
       }
+
       .Menu {
         font-size: 40px;
         margin-left: 1rem;
         margin-right: 1rem;
         margin-top: 8rem;
       }
+
       .greeting {
         margin-top: 1rem;
         margin-right:1rem;
@@ -464,44 +477,60 @@
         font-size: 10px;
       }
 
-      .category {
-        top: 60%;
-        transform: translate(-50%, -50%);
+      .option {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 3px 0px;
       }
+
+      .category {
+        top: 63%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+      }
+
       .main {
         font-size: 10px;
-        margin-top: 10px;
-        padding-top: 7px;
-        margin-left: 0px;
-        margin-right: 0px;
+        margin: 10px 5px;
         align-items: center;
+        padding-left: 5px;
+        padding-right: 5px;
       }
 
       .img {
-        width: 100px;
+        width: 65px;
       }
 
       .dessert {
         font-size: 10px;
-        margin: 20px;
-        padding-top: 7px;
+        margin: 10px 0px;
+        padding-left: 0px;
+        padding-right: 0px;
       }
 
       .section2 {
       overflow: hidden;
       width: 100%;
-      margin-bottom: -122vh;
+      margin-top: 40vh;
+      margin-bottom: -105vh;
       }
+      
       .dish {
         width: 100%;
         margin-bottom: 20px;
         font-size: 10px;
+        margin-left: 3px;
+        margin-right: 3px;
+        padding: 12px 12px;
         
-      }
+      } 
 
       .alldish2 {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 10px;
+        padding: 0px 20px;
       }
 
       .hidden_text {
@@ -528,16 +557,16 @@
         </div>
         
     </nav>
-    <p class="Menu">OUR MENU</p>
+    <p class="Menu" id="Menu">OUR MENU</p>
     <p class="greeting">At Tidal's Kitchen, we take pride in curating an unforgettable culinary experience. Dive into our thoughtfully crafted menus, where every dish is a testament to our passion for fine dining and exceptional flavors.</p>
 
     <div class="category">
-        <p class="option main">Main Dish Course</p>
+        <p class="option main">Main Dish</p>
         <p class="option dessert"><a href="dessert.html">Desserts</a></p>
     </div>
 
-    <div class="section2">
-      <div class="alldish1">
+    <div class="section2" id="section2">
+      <div class="alldish2">
         <div class="dish" id="dish">
           <img src="https://i.pinimg.com/736x/3c/3e/bc/3c3ebc3d96d76b5df0ebd9425d54ae32.jpg" alt="chillean sea bass" width="280px" class="img">
           <p>Golden Shores Chilean Sea Bass</p>
