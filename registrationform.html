@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tidal's Kitchen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <style>
+  
+        body {
+        margin: 0px;
+        font-family: Poppins;
+        background: url(backgroundRes.jpg);
+        background-size: cover;
+        padding-top: 3em;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #47555E;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10000;
+        
+        
+    }
+    
+    /*------------------extra----------*/
+    .table1 {
+        width: 100%; 
+    }
+    
+    td {
+        padding: 15px;
+        vertical-align: top; 
+    }
+    
+    .error1, .error2 {
+        margin: 10px 0px 0px 4em; 
+        font-size: 12px; 
+        
+    }
+    
+    /*----------------------------*/
+    
+    .nav2 {
+        margin: 0px 12px;
+    }
+    
+   
+    
+    
+    
+    .log-In {
+        position: relative;
+      display: inline-block;
+      padding: 5px 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      z-index: 1;
+      border: 1px solid rgb(221, 218, 218);
+      background: white;
+      font-weight: bold;
+      font-size: 16px;
+      color: #1993e4;
+      transition: all 1.2s linear;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    
+    .log-In::after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(to right, #1993e4, #1993e456);
+        border-radius: 30%;
+        height: 96px;
+        width: 96px;
+        animation: spin infinite linear 1.8s;
+        animation-delay: 0;
+        bottom: -38px;
+        right: -112px;
+        transition: all 1.2s linear;
+        z-index: -1;
+      }
+    
+      .log-In:hover {
+        color: white;
+        transition-duration: 0.45s;
+        
+      }
+      
+      .log-In:hover::after {
+        right: -60px;
+        bottom: -92px;
+        width: 256px;
+        height: 256px;
+      }
+      
+      .log-In > .log-In-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    
+      legend {
+        text-align: center;
+        color: white;
+        font-size: 31px;
+        padding: 30px 0px 0px 0px;
+        font-weight: bolder;
+      }
+    
+      .form1 {
+        display: block;
+        margin: 4em auto auto 29em;
+        width: 44.5%;
+        height: 30em;
+        border-style: solid;
+        border-width: 1.5px;
+        border-color: white;
+        border-radius: 20px;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
+        padding: 43px 0px;
+      }
+    
+      .input1 {
+        padding: 6px 10px;
+        border-radius: 12px;
+        
+        background-color: transparent;
+        margin: 0px 0px 0px 12px;
+        border-style: none;
+        color: white;
+        transition: 0.35s;
+        outline-offset: 3px;
+        outline: 2px solid white;
+      }
+    
+      .input1:hover {
+        background-color: white;
+        color: black;
+        border: none;
+      }
+    
+      .input1:focus {
+        outline-offset: 7px;
+        background-color: white;
+        color: black;
+      }
+    
+      .input1:hover::placeholder {
+        color: black;
+      }
+    
+      ::placeholder {
+        color: white;
+        opacity: 50%;
+      }
+    
+      table {
+        margin-left: 5em;
+        color: white;
+      }
+    
+      td {
+        padding: 10px;
+    }
+    
+    /*-------------another log in button----------*/
+    
+    /* From Uiverse.io by adamgiebl */ 
+    .logbutt {
+      position: relative;
+      display: inline-block;
+      margin: 15px 0px 0px 15em;
+      padding: 8px 21px;
+      text-align: center;
+      font-size: 17px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: white;
+      background: transparent;
+      cursor: pointer;
+      transition: ease-out 0.5s;
+      border: 2px solid #93DEFF;
+      border-radius: 10px;
+      box-shadow: inset 0 0 0 0 #93DEFF;
+    }
+    
+    .logbutt:hover {
+      color: rgb(44, 98, 109);
+      box-shadow: inset 0 -100px 0 0 #93DEFF;
+      transform: scale(1.05)
+      
+    }
+    
+    .logbutt:active {
+      transform: scale(0.9);
+    }
+
+
+    @media (max-width: 500px) {
+
+      .form1 {
+        margin-left: 4em;
+        width: 37em;
+      }
+
+      
+    }
+    
+    </style>
+
+
+</head>
+<body>
+    <nav>
+        <img src="tk_-removebg-preview.png" alt="Td" height="40" style="padding: 10px 13px;">
+
+        <div class="nav2">
+                <button class="log-In" onclick="window.location.href='Log-in.html'">Log in</button>
+        </div>
+        
+    </nav>
+
+    <div class="form1">
+    <legend>Register</legend>
+    <table class="table1">
+        <tr>
+            <td><label>Email:</label></td>
+            <td><input type="text" id="email" name="email" placeholder="Enter your email" class="input1">
+            <p class="error1" style="color: red; margin-left: 30px;"></p></td>
+        </tr>
+
+        <tr>
+            <td><label>Username:</label></td>
+            <td><input type="text" id="username" name="uName" placeholder="Enter your Username" class="input1">
+            <p class="error2" style="color: red; margin-left: 30px;"></p></td>
+        </tr>
+
+        <tr>
+            <td><label>Password:</label></td>
+            <td><input type="password" id="password" name="password" placeholder="Enter your password" class="input1">
+            <p class="error3" style="color: red; font-size: 12px; margin-left: 30px;"></p></td>
+        </tr>
+
+        <tr>
+            <td><label>Confirm Password:</label></td>
+            <td><input type="password" id="confirmPass" name="password2" placeholder="Enter your password" class="input1">
+            <p class="error4" style="color: red; font-size: 12px; margin-left: 30px;"></p></td>
+        </tr>
+    </table>
+    <button class="logbutt" onclick="validateForm()">Register</button>
+</div>
+
+<script>
+    
+function validateForm() {
+    
+    document.querySelector('.error1').textContent = '';
+    document.querySelector('.error2').textContent = '';
+    document.querySelector('.error3').textContent = '';
+    document.querySelector('.error4').textContent = '';
+
+    
+    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const confirmPass = document.getElementById('confirmPass').value;
+
+
+    let isValid = true; 
+
+    
+    if (!email) {
+        document.querySelector('.error1').textContent = 'Email is required.';
+        isValid = false; 
+    }
+
+    if (!username) {
+        document.querySelector('.error2').textContent = 'Username is required.';
+        isValid = false; 
+    }
+
+    
+    if (!password) {
+        document.querySelector('.error3').textContent = 'Password is required.';
+        isValid = false; 
+    }
+
+    if (!confirmPass) {
+        document.querySelector('.error4').textContent = 'confirmation is required.';
+        isValid = false; 
+    }
+
+    // If both are filled, you can proceed (optional)
+    if (isValid) {
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userName', username);
+        localStorage.setItem('userPassword', password);
+        localStorage.setItem('userConfirmPassword', confirmPass);
+
+        window.location.href='Log-in.html';
+        
+    }
+}
+
+
+</script>
+</body>
+
+</html>

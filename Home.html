@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tidal's Kitchen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--<link rel="stylesheet" type="text/css" href="final-proj.css">-->
+
+    <style>
+        
+body {
+    margin: 0px;
+    font-family: Poppins;
+    background: url(backgroundRes.jpg);
+    padding-top: 3em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 10em;
+    height: 100%;
+    width: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+/*-----------Nav part--------*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    opacity: 80%;
+    transition: 0.35s;
+    
+    
+}
+
+nav:hover {
+  opacity: 1;
+  background-color: #47555E;
+}
+
+.nav2 {
+    margin: 0px 12px;
+}
+
+.options {
+    text-decoration: none;
+    padding: 0 15px;
+    color: white;
+    transition: 0.45s;
+    font-size: 17px;
+}
+
+.options:hover {
+  animation: scaling 1s infinite alternate-reverse ease-in-out;
+  color: #75bdee;
+  transition: 0.45s;
+}
+
+@keyframes scaling {
+  0% {
+    font-size: 17px;
+    }
+    100% {
+      font-size: 18px; /* Scale back to original size */
+    }
+}
+
+
+
+.log-In {
+    position: relative;
+  display: inline-block;
+  padding: 5px 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid rgb(221, 218, 218);
+  background: white;
+  font-weight: bold;
+  font-size: 16px;
+  color: #1993e4;
+  transition: all 1.2s linear;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.log-In::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to right, #7e1d1d, #e6292956);
+    border-radius: 30%;
+    height: 96px;
+    width: 96px;
+    animation: spin infinite linear 1.8s;
+    animation-delay: 0;
+    bottom: -38px;
+    right: -112px;
+    transition: all 1.2s linear;
+    z-index: -1;
+  }
+
+  .log-In:hover {
+    color: white;
+    transition-duration: 0.45s;
+    
+  }
+  
+  .log-In:hover::after {
+    right: -60px;
+    bottom: -92px;
+    width: 256px;
+    height: 256px;
+  }
+  
+  .log-In > .log-In-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+/*----------------------------------------*/
+select {
+  background-color: transparent;
+  color: white;
+  /*border-style: solid;
+  border-width: 1.5px;
+  border-color: white;*/
+  outline-style: solid;
+  outline-width: 1.5px;
+  outline-offset: -2px;
+  outline-color: white;
+  padding: 7px 10px;
+  font-size: 16px;
+  margin: 0px 8px;
+  border-radius: 10px;
+  transition: 0.35s;
+}
+
+select:hover {
+  outline-offset: 3px;
+  background-color: #3383b8;
+  outline-color: #3383b8;
+  letter-spacing: 1px;
+}
+
+option {
+  background-color: #47555E;
+}
+
+/*-----------about us--------*/
+.about {
+    color: white;
+    margin: 13em 0em 0em 13em;
+    left: 0;
+    z-index: -1;
+    position: relative;
+    
+}
+
+.tidal .tidal2{
+  position: absolute;
+  z-index: -1;
+}
+
+.tidal {
+    font-size: 100px;
+    font-weight: bolder;
+    margin: 0px;
+    color: white; 
+    color: #fff;
+    background: linear-gradient(to right, #ffffff 0, rgb(60, 186, 208) 10%, #ffffff 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s infinite alternate ease-in-out;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    z-index: -1;
+    position: relative;
+  }
+
+  @-moz-keyframes shine {
+  0% {
+    background-position: -300px;
+  }
+  60% {
+    background-position: 400px;
+  }
+  100% {
+    background-position: 800px;
+  }
+}
+@-webkit-keyframes shine {
+  0% {
+    background-position: -300px;
+  }
+  60% {
+    background-position: 400px;
+  }
+  100% {
+    background-position: 800px;
+  }
+}
+@-o-keyframes shine {
+  0% {
+    background-position: -300px;
+  }
+  60% {
+    background-position: 400px;
+  }
+  100% {
+    background-position: 800px;
+  }
+}
+@keyframes shine {
+  0% {
+    background-position: -300px;
+  }
+  60% {
+    background-position: 400px;
+  }
+  100% {
+    background-position: 800px;
+  }
+}
+
+/*-------------------section 2--------------------*/
+
+.section2 {
+  background-color: #111a20;
+  width: 100%;
+  margin-top: 50vh;
+  position: relative;
+  z-index: 1;
+
+  /*box-shadow: 0 0 100px 120px #577e97;*/
+}
+
+.aboutTidal {
+  text-align: center;
+  font-size: 70px;
+  color: white;
+  font-weight: bold;
+  padding-top: 30px;
+  margin: 0px;
+  z-index: 2;
+  position: relative;
+}
+
+
+
+.description {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4em 5em;
+  margin: 5em 6em 0px 6em;
+  position: absolute;
+  color: white;
+  border-style: solid;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.55s;
+  
+}
+
+.description:hover {
+  background-color: #202f38;
+  padding: 4.5em 5.5em;
+}
+
+.description2 {
+  padding-left: 150px;
+}
+
+.aboutpic {
+  width: 350px; 
+  height: 250px;
+  align-items: center;
+}
+
+        
+.tidalsec {
+  width: 700px;
+  margin-left: 28em;
+  margin-top: 25px;
+}
+
+/*------------------founders section-----*/
+
+.founders {
+  margin-top: 8em;
+}
+
+.founderspic {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 22em;
+}
+
+.names {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 9.5em;
+  color: white;
+  font-size: 23px;
+  margin-top: 20px;
+}
+
+.offSet {
+  border-radius: 10px; 
+  outline-offset: 20px; 
+  outline-color: #75bdee;
+  outline-style: outset;
+}
+
+
+/*--------------section 3---------------*/
+
+.section3 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contacts {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 3em;
+}
+
+/*--------scroll bar------------*/
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #2d424f;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #47555E;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4a7794;
+}
+
+/*-------------rating---------*/
+/* From Uiverse.io by vinodjangid07 */ 
+.rating-card {
+  width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1.5px;
+  gap: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.058);
+  transition: 0.45s;
+}
+
+.rating-card:hover {
+  padding: 25px;
+  background-color: #0a202e;
+}
+
+.text-wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.text-primary {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.text-secondary {
+  color: #cccccc;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.rating-stars-container {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.star-label svg {
+  fill: rgb(210, 210, 210);
+  width: 20px;
+  height: auto;
+}
+.rating-stars-container input {
+  appearance: unset;
+}
+.rating-stars-container input:hover ~ .star-label svg {
+  fill: #1993e4;
+}
+.rating-stars-container input:checked ~ .star-label svg {
+  fill: #1993e4;
+  animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.socials-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(150, 150, 150);
+}
+.social-button {
+  text-decoration: none;
+}
+.social-button svg {
+  width: 15px;
+  fill: rgb(228, 228, 228);
+}
+.social-button:hover svg {
+  fill: #1993e4;
+}
+
+/*-----------------plans---------*/
+
+.sec1 {
+  background: url(sec1.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 3em 0px;
+  color: white;
+}
+
+.plan {
+  margin-left: 4em;
+  background: rgba(0, 0, 0, 0.5);
+  width: 30em;
+  padding: 20px 25px;
+  border-radius: 6px;
+}
+
+.button1 {
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: #202f38;
+  border-style: solid;
+  color: #89cbf7;
+  border-color: #1993e4;
+  transition: 0.45s;
+}
+
+.button1:hover {
+  padding: 15px 28px;
+  color: white;
+  border-color: #75bdee;
+  background-color: #75bdee;
+  cursor: pointer;
+}
+
+.sec2 {
+  background: url(sec2.jpg);
+  position: relative;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 3em 0px;
+  color: white;
+}
+
+.menus {
+  text-align: right;
+  margin-left: 40em;
+  margin-right: 4em;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 25px;
+  border-radius: 6px;
+}
+
+
+/*----------------MEDIA QUERIES----------*/
+
+@media (max-width: 600px) {
+  body {
+    margin: 0px;
+    background: url(backgroundRes.jpg);
+    background-position: center;
+    background-size: 2000px;
+    background-repeat: no-repeat ;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+
+  .logo {
+    padding: 10px 13px;
+  width: 170px;
+  height: 60px;
+  }
+  
+  nav {
+    width: 100%;
+    padding: 12px 10px;
+  }
+
+  .options{
+    font-size: 25px;
+    padding: 0px 12px;
+  }
+
+  select {
+    font-size: 25px;
+    margin: 0px 12px;
+  }
+
+  .log-In {
+    font-size: 24px;
+    padding: 8px 18px;
+    margin: 0px 12px;
+  }
+
+  .about {
+    margin-top: 20em;
+    margin-left: 12em;
+    width: 800px;
+  }
+
+  .tidal {
+    font-size: 85px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .tidal2 {
+    font-size: 30px;
+  }
+
+  
+  .section2 {
+  background-color: #111a20;
+  margin-top: 50vh;
+  width: 1180px;
+  position: relative;
+  z-index: 1;
+
+  /*box-shadow: 0 0 100px 120px #577e97;*/
+}
+
+.sec1 {
+  background: url(sec1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 3em 0px;
+  color: white;
+}
+
+.plan {
+  margin-left: 4em;
+  background: rgba(0, 0, 0, 0.5);
+  width: 30em;
+  padding: 20px 25px;
+  border-radius: 6px;
+}
+
+.button1 {
+  padding: 15px 20px;
+  font-size: 22px;
+  border-radius: 20px;
+  background-color: #202f38;
+  border-style: solid;
+  color: #89cbf7;
+  border-color: #1993e4;
+  transition: 0.45s;
+}
+
+.menus {
+  text-align: right;
+  margin-left: 34em;
+  margin-right: 4em;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 25px;
+  border-radius: 6px;
+}
+
+}
+    </style>
+
+
+</head>
+<body>
+    <nav>
+        <img src="tk_-removebg-preview.png" alt="Td" height="40" style="padding: 10px 13px;">
+
+        <div class="nav2">
+            
+                <a href="#home" class="options">Home</a>
+                <a href="#" class="options">About</a>
+                <select name="option" id="mySelect">
+                  <option value="products">Products & Services</option>
+                  <option value="menu">Menu</option>
+                  <option value="info">Contact Info</option>
+                </select>
+                
+                <!-- <a href="#">Products &amp; Services</a> -->
+           
+            <button class="log-In" onclick="window.location.href='index.html'">Log Out</button>
+        </div>
+        
+    </nav>
+
+    <div class="about" id="home">
+    <p class="tidal">TIDAL'S Kitchen</p> 
+    
+    <p style="margin: 0px; font-size: 20px; position: absolute;" class="tidal2" id="welcome">Where every meal is a masterpiece</p>       
+    </div>
+
+    <div class="section2" id="products">
+
+        <div class="sec1">
+          <div class="plan">
+            <h1 style="margin-top: 0px;">Check your Plan</h1>
+            <p>we have different plans for you to choose from, check it out!</p>
+          <button class="button1" onclick="window.location.href='plans.html'">Check the plan</button>
+         </div>
+        </div>
+
+        <div class="sec2">  
+          <div class="menus" id="menu">
+            <h1 style="margin-top: 0px;">Menu list</h1>
+            <p>Check out our signature dishes that wil make your tastebuds go with the waves!</p>
+            <button class="button1">Menu</button>
+          </div>
+        
+        </div>
+  
+
+      <div class="section3">
+         
+        <div class="rating-card">
+          <div class="text-wrapper">
+            <p class="text-primary">Please Rate Your Experience</p>
+            <p class="text-secondary">to help us serve you better</p>
+          </div>
+
+          <div class="rating-stars-container">
+            <input value="star-5" name="star" id="star-5" type="radio" />
+            <label for="star-5" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+            <input value="star-4" name="star" id="star-4" type="radio" />
+            <label for="star-4" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+            <input value="star-3" name="star" id="star-3" type="radio" />
+            <label for="star-3" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+            <input value="star-2" name="star" id="star-2" type="radio" />
+            <label for="star-2" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+            <input value="star-1" name="star" id="star-1" type="radio" />
+            <label for="star-1" class="star-label">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  pathLength="360"
+                ></path>
+              </svg>
+            </label>
+          </div>
+          <div class="socials-container">
+            <a class="social-button" href="#">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
+                ></path>
+              </svg>
+            </a>
+            <a class="social-button" href="#">
+              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                ></path>
+              </svg>
+            </a>
+            <a class="social-button" href="#">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <section id="info">
+        <div class="contacts">
+          <p style="font-size: 25px;">Contacts</p>
+          <p style="font-size: 10px;">Location: Cebu South Coastal Rd, Antuwanga, Cebu City, 6000 Cebu</p>
+          <p style="font-size: 10px;">Contact no. 79429-321-3218</p>
+          
+        </div>
+      
+      </section>
+      
+      
+    </div>
+
+    
+
+    <script>
+     
+  const tidal = document.querySelector('.tidal');
+  const tidal2 = document.querySelector('.tidal2');
+  const section2 = document.querySelector('.section2');
+
+  const username = localStorage.getItem('userName');
+
+  document.getElementById('welcome').textContent = `Welcome to Tidal's Kitchen ${username}`;
+
+//-----scroll animation
+  window.addEventListener('scroll', () => {
+    
+    const scrollPosition = window.scrollY;
+
+    tidal.style.transform = `translateY(${scrollPosition * 1}px)`; 
+    tidal2.style.transform = `translateY(${scrollPosition * 1}px)`; 
+    section2.style.transform = `translateY(-${scrollPosition * 1}px)`;
+});
+
+document.getElementById('mySelect').addEventListener('change', function() {
+            const selectedValue = this.value; // Get the selected value
+            if (selectedValue) {
+                const targetSection = document.getElementById(selectedValue); // Get the target section
+                targetSection.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section smoothly
+            }
+        });
+
+        //-------------Soft navigation
+
+document.getElementById('mySelect').addEventListener('change', function() {
+            const selectedValue = this.value; // Get the selected value
+            if (selectedValue) {
+                const targetSection = document.getElementById(selectedValue); // Get the target section
+                targetSection.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section smoothly
+            }
+        });
+    </script>
+</body>
+</html>
