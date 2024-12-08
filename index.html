@@ -475,24 +475,37 @@ option {
   }
 }
 
+@keyframes loading2 {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
 .close {
   opacity: 0;
+  animation: loading2 1s ease-in-out;
 }
 
 .opening {
-  opacity: 1; 
+  opacity: 1;
   animation: loading 1s ease-in-out;
 }
 
 
 /*--------MEDIA QUERIES--------*/
 
-@media (orientation: portrait) and (max-width: 500px) {
+@media (max-width: 600px) {
   body {
     margin: 0px;
     background: url(backgroundRes.jpg);
     background-position: center;
-    background-size: 2000px;
+    background-size: 1920px;
     background-repeat: no-repeat ;
     padding: 0px;
     height: 100%;
@@ -514,14 +527,7 @@ option {
   nav {
     width: 100%;
     padding: 12px 10px;
-    display: flex;
   }
-
-  nav:hover {
-      opacity: 1;
-      background-color: #47555E;
-      }
-
 
   .options{
     font-size: 25px;
@@ -736,10 +742,14 @@ document.getElementById('mySelect').addEventListener('change', function() {
         const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                console.log("Element is in view:", entry.target);
+                console.log("Element is in view:", entry.isIntersecting);
                 entry.target.classList.remove("close");
                 entry.target.classList.add("opening"); 
-                }
+                } else {
+            // when Element is out of view
+            entry.target.classList.remove("opening");
+            entry.target.classList.add("close");
+        }
             });
         }, {
           threshold: 0.5 //how many pixels will be showed before executing the animation
