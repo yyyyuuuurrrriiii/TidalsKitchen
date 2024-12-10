@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <link rel="icon" href="https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-tidal-wave-clipart-vector-png-image_6865053.png">
-
     
     <style>
   
@@ -36,13 +35,22 @@
     }
     
     /*------------------extra----------*/
-    .table1 {
-        width: 100%; 
+    
+
+    table {
+      margin: 0 auto;
+      width: 50%; 
+      align-items: center;
+      color: white;
     }
     
     td {
-        padding: 15px;
-        vertical-align: top; 
+      padding: 0.1em 2.5em;
+      height: 5em;
+    }
+
+    label {
+      width: 100%;
     }
     
     .error1, .error2 {
@@ -86,7 +94,6 @@
         height: 96px;
         width: 96px;
         animation: spin infinite linear 1.8s;
-        animation-delay: 0;
         bottom: -38px;
         right: -112px;
         transition: all 1.2s linear;
@@ -120,32 +127,31 @@
         }
       }
     
-      legend {
+      .legends {
         text-align: center;
         color: white;
         font-size: 31px;
-        padding: 30px 0px 0px 0px;
+        margin: 0px;
         font-weight: bolder;
+        padding-bottom: 12px;
       }
     
       .form1 {
         display: block;
         margin: 4em auto auto 29em;
         width: 44.5%;
-        height: 30em;
         border-style: solid;
         border-width: 1.5px;
         border-color: white;
         border-radius: 20px;
         backdrop-filter: blur(4px);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
-        padding: 43px 0px;
+        padding: 3em 0px;
       }
     
       .input1 {
         padding: 6px 10px;
         border-radius: 12px;
-        
         background-color: transparent;
         margin: 0px 0px 0px 12px;
         border-style: none;
@@ -176,22 +182,15 @@
         opacity: 50%;
       }
     
-      table {
-        margin-left: 5em;
-        color: white;
-      }
-    
-      td {
-        padding: 10px;
-    }
+      
     
     /*-------------another log in button----------*/
     
     /* From Uiverse.io by adamgiebl */ 
     .logbutt {
       position: relative;
-      display: inline-block;
-      margin: 15px 0px 0px 15em;
+      display: block;
+      margin: 15px auto 0 auto;
       padding: 8px 21px;
       text-align: center;
       font-size: 17px;
@@ -209,7 +208,7 @@
     .logbutt:hover {
       color: rgb(44, 98, 109);
       box-shadow: inset 0 -100px 0 0 #93DEFF;
-      transform: scale(1.05)
+      transform: scale(1.05);
       
     }
     
@@ -220,13 +219,34 @@
 
     @media (max-width: 500px) {
 
-      .form1 {
-        margin-left: 4em;
-        width: 37em;
-      }
-
-      
+    body {
+      margin: 0px;
+      font-family: Poppins;
+      background: url(backgroundRes.jpg);
+      background-size: 1400px;
+      background-repeat: no-repeat;
+      padding-top: 3em;
     }
+
+    .form1 {
+      padding: 3.5em 12px 8em 12px;
+      display: block;
+      margin: 3em auto 0 auto;
+      width: 26em;
+      height: 22em;
+      overflow: hidden;
+    }
+
+    .table1 {
+      margin: 0;
+
+    }
+
+    .logbutt {
+      display: block;
+      margin: 0 auto;
+    }
+}
     
     </style>
 
@@ -243,89 +263,87 @@
     </nav>
 
     <div class="form1">
-    <legend>Register</legend>
-    <table class="table1">
-        <tr>
-            <td><label>Email:</label></td>
-            <td><input type="text" id="email" name="email" placeholder="Enter your email" class="input1">
-            <p class="error1" style="color: red; margin-left: 30px;"></p></td>
-        </tr>
+      <h1 class="legends">Register</h1>
+      <form onsubmit="event.preventDefault(); validateForm();"> <!-- Added form element -->
+          <table class="table1">
+              <tr>
+                  <td><label>Email:</label></td>
+                  <td><input type="text" id="email" name="email" placeholder="Enter your email" class="input1">
+                  <p class="error1" style="color: red; margin-left: 30px;"></p></td>
+              </tr>
+  
+              <tr>
+                  <td><label>Username:</label></td>
+                  <td><input type="text" id="username" name="uName" placeholder="Enter your Username" class="input1">
+                  <p class="error2" style="color: red; margin-left: 30px;"></p></td>
+              </tr>
+  
+              <tr>
+                  <td><label>Password:</label></td>
+                  <td><input type="password" id="password" name="password" placeholder="Enter your password" class="input1">
+                  <p class="error3" style="color: red; font-size: 12px; margin-left: 30px;"></p></td>
+              </tr>
+  
+              <tr>
+                  <td><label>Confirm Password:</label></td>
+                  <td><input type="password" id="confirmPass" name="password2" placeholder="Enter your password" class="input1">
+                  <p class="error4" style="color: red; font-size: 12px; margin-left: 30px;"></p></td>
+              </tr>
+          </table>
+          <button type="submit" class="logbutt">Register</button> <!-- Changed to type="submit" -->
+      </form>
+  </div>
+  
+  <script>
+  function validateForm() {
+      document.querySelector('.error1').textContent = '';
+      document.querySelector('.error2').textContent = '';
+      document.querySelector('.error3').textContent = '';
+      document.querySelector('.error4').textContent = '';
+  
+      const email = document.getElementById('email').value;
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const confirmPass = document.getElementById('confirmPass').value;
+  
+      let isValid = true; 
+  
+      if (!email) {
+          document.querySelector('.error1').textContent = 'Email is required.';
+          isValid = false; 
+      }
+  
+      if (!username) {
+          document.querySelector('.error2').textContent = 'Username is required.';
+          isValid = false; 
+      }
+  
+      if (!password) {
+          document.querySelector('.error3').textContent = 'Password is required.';
+          isValid = false; 
+      }
+  
+      if (!confirmPass) {
+          document.querySelector('.error4').textContent = 'Confirmation is required.';
+          isValid = false; 
+      }
 
-        <tr>
-            <td><label>Username:</label></td>
-            <td><input type="text" id="username" name="uName" placeholder="Enter your Username" class="input1">
-            <p class="error2" style="color: red; margin-left: 30px;"></p></td>
-        </tr>
-
-        <tr>
-            <td><label>Password:</label></td>
-            <td><input type="password" id="password" name="password" placeholder="Enter your password" class="input1">
-            <p class="error3" style="color: red; font-size: 12px; margin-left: 30px;"></p></td>
-        </tr>
-
-        <tr>
-            <td><label>Confirm Password:</label></td>
-            <td><input type="password" id="confirmPass" name="password2" placeholder="Enter your password" class="input1">
-            <p class="error4" style="color: red; font-size: 12px; margin-left: 30px;"></p></td>
-        </tr>
-    </table>
-    <button class="logbutt" onclick="validateForm()">Register</button>
-</div>
-
-<script>
-    
-function validateForm() {
-    
-    document.querySelector('.error1').textContent = '';
-    document.querySelector('.error2').textContent = '';
-    document.querySelector('.error3').textContent = '';
-    document.querySelector('.error4').textContent = '';
-
-    
-    const email = document.getElementById('email').value;
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    const confirmPass = document.getElementById('confirmPass').value;
-
-
-    let isValid = true; 
-
-    
-    if (!email) {
-        document.querySelector('.error1').textContent = 'Email is required.';
+      if (confirmPass !== password) {
+        document.querySelector('.error4').textContent = 'Confirm password is not the same ';
         isValid = false; 
-    }
-
-    if (!username) {
-        document.querySelector('.error2').textContent = 'Username is required.';
-        isValid = false; 
-    }
-
-    
-    if (!password) {
-        document.querySelector('.error3').textContent = 'Password is required.';
-        isValid = false; 
-    }
-
-    if (!confirmPass) {
-        document.querySelector('.error4').textContent = 'confirmation is required.';
-        isValid = false; 
-    }
-
-    // If both are filled, you can proceed (optional)
-    if (isValid) {
-        localStorage.setItem('userEmail', email);
-        localStorage.setItem('userName', username);
-        localStorage.setItem('userPassword', password);
-        localStorage.setItem('userConfirmPassword', confirmPass);
-
-        window.location.href='Log-in.html';
-        
-    }
-}
-
-
-</script>
+      }
+  
+      // If both are filled, you can proceed (optional)
+      if (isValid) {
+          localStorage.setItem('userEmail', email);
+          localStorage.setItem('userName', username);
+          localStorage.setItem('userPassword', password);
+          localStorage.setItem('userConfirmPassword', confirmPass);
+  
+          window.location.href='Log-in.html';
+      }
+  }
+  </script>
 </body>
 
 </html>
